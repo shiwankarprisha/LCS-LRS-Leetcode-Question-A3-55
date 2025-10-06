@@ -3,8 +3,12 @@ int longestCommonSubsequence(char* text1, char* text2){
     int m = strlen(text2);
     // Always keep dp for the shorter string to save memory
     if(m > n){
-        char* tmp = text1; text1 = text2; text2 = tmp;
-        int t = n; n = m; m = t;
+        char* tmp = text1; 
+        text1 = text2; 
+        text2 = tmp;
+        int t = n; 
+        n = m; 
+        m = t;
     }
     int* prev = (int*)calloc(m + 1, sizeof(int));
     int* curr = (int*)calloc(m + 1, sizeof(int));
@@ -24,4 +28,5 @@ int longestCommonSubsequence(char* text1, char* text2){
     free(prev);
     free(curr);
     return result;
+
 }
